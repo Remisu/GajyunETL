@@ -1,0 +1,92 @@
+﻿<Window Background="#FFEAF1EF" x:Class="GajyunWPF.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Administrator Window" Height="600" Width="500" Icon="/jiro_icon.ico">
+    <TabControl Background="#FFEAF1EF">
+        <!-- Tab de Employee -->
+        <TabItem Header="Employee">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Label Content="Name" Foreground="Black" IsHitTestVisible="False" HorizontalAlignment="Center" Margin="5, -20, 0, 0" Visibility="Visible" x:Name="lblEmployeeNamePlaceholder" VerticalAlignment="Bottom"/>
+                    <TextBox Width="120" Margin="2" x:Name="txtEmployeeName" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Label Content="Position" Foreground="Black" IsHitTestVisible="False" HorizontalAlignment="Left" Margin="5, -20, 0, 0" Visibility="Visible" x:Name="lblEmployeePositionPlaceholder" VerticalAlignment="Bottom"/>
+                    <TextBox Width="120" Margin="2" x:Name="txtEmployeePosition" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Button Content="Add" Margin="2" Click="AddEmployee_Click"/>
+                    <Button Content="Update" Margin="2" Click="UpdateEmployee_Click"/>
+                    <Button Content="Delete" Margin="2" Click="DeleteEmployee_Click"/>
+                </StackPanel>
+                <DataGrid x:Name="dgEmployees" Grid.Row="1" Margin="2" AutoGenerateColumns="False" SelectionChanged="dgEmployees_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Position" Binding="{Binding Position}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </TabItem>
+        <!-- Similar tabs for TaskType, Task, ChecklistType -->
+        <TabItem Header="Checklist Type">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Label Content="Description" Foreground="Black" IsHitTestVisible="False" HorizontalAlignment="Left" Margin="5, -20, 0, 0" Visibility="Visible" x:Name="lblChecklistTypeDescriptionPlaceholder" VerticalAlignment="Bottom"/>
+                    <TextBox Width="200" Margin="2" x:Name="txtChecklistTypeDescription" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Button Content="Add" Margin="2" Click="AddChecklistType_Click"/>
+                    <Button Content="Update" Margin="2" Click="UpdateChecklistType_Click"/>
+                    <Button Content="Delete" Margin="2" Click="DeleteChecklistType_Click"/>
+                </StackPanel>
+                <DataGrid x:Name="dgChecklistTypes" Grid.Row="1" Margin="2" AutoGenerateColumns="False" SelectionChanged="dgChecklistTypes_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Task Type">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Label Content="Description" Foreground="Black" IsHitTestVisible="False" HorizontalAlignment="Left" Margin="5, -20, 0, 0" Visibility="Visible" x:Name="lblTaskTypeDescriptionPlaceholder" VerticalAlignment="Bottom"/>
+                    <TextBox Width="200" Margin="2" x:Name="txtTaskTypeDescription" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Button Content="Add" Margin="2" Click="AddTaskType_Click"/>
+                    <Button Content="Update" Margin="2" Click="UpdateTaskType_Click"/>
+                    <Button Content="Delete" Margin="2" Click="DeleteTaskType_Click"/>
+                </StackPanel>
+                <DataGrid x:Name="dgTaskTypes" Grid.Row="1" Margin="2" AutoGenerateColumns="False" SelectionChanged="dgTaskTypes_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Task">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Label Content="Description" Foreground="Black" IsHitTestVisible="False" HorizontalAlignment="Left" Margin="5, -20, 0, 0" Visibility="Visible" x:Name="lblTaskDescriptionPlaceholder" VerticalAlignment="Bottom"/>
+                    <TextBox Width="200" Margin="2" x:Name="txtTaskDescription" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                    <Button Content="Add" Margin="2" Click="AddTask_Click"/>
+                    <Button Content="Update" Margin="2" Click="UpdateTask_Click"/>
+                    <Button Content="Delete" Margin="2" Click="DeleteTask_Click"/>
+                </StackPanel>
+                <DataGrid x:Name="dgTasks" Grid.Row="1" Margin="2" AutoGenerateColumns="False" SelectionChanged="dgTasks_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
